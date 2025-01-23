@@ -66,7 +66,7 @@ func Day7Part2() {
 		}
 	}
 
-	fmt.Println("part1Answer", ans)
+	fmt.Println("part2Answer", ans)
 }
 
 func dfs(target int, set []int, ops []string) bool {

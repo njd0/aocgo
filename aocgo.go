@@ -1,9 +1,9 @@
 package main
 
 import (
-	puzzle "aoc/m/2024/day7"
+	puzzle "aoc/m/2024/day8"
 )
 
 func main() {
-	puzzle.Day7Part2()
+	puzzle.Day8Part2()
 }
