@@ -52,14 +52,6 @@ func isOnMap(v vec) bool {
 }
 
 func Day6() {
-	// setup game state related variables
-	// - player can be global, obstacle char (start pos & dir)
-	// walls and player should be vector based
-	// create vector based math to improve readability
-
-	// visited: [vector]bool
-	// PART 1 ANSWER: count visited
-
 	err := file.ParseFile(filename, func(line string) {
 		// find where character is starting
 		if strings.Contains(line, startingGuardCharacter) {
@@ -82,6 +74,7 @@ func Day6() {
 		panic(err)
 	}
 
+	// track everywhere i have been
 	resetGameState()
 	for {
 		next := guardPos.Add(dirs[guardDir])
@@ -109,8 +102,8 @@ func Day6() {
 	for visit := range visited {
 		pos := visit.pos
 		dir := visit.dir
+		
 		// try current pos as obstacle
-
 		prev := pos.Sub(dirs[dir])
 		if prev.Equal(startingGuardPos) { continue }
 		dir = rotateGuardDir(dir)
